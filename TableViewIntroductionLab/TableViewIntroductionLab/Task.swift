@@ -64,20 +64,20 @@ struct Task {
         ]
     }
   
-  func getNotStarted() -> [Task] {
+ static func getNotStarted() -> [Task] {
     return Task.allTasks.filter({ (task) -> Bool in
       task.status == .notStarted
     })
   }
-  
-  
-  func getInProgress() -> [Task] {
+
+
+  static func getInProgress() -> [Task] {
     return Task.allTasks.filter({ (task) -> Bool in
       task.status == .inProgress
     })
   }
-  
-  func getCompletedTasks() -> [Task] {
+
+  static func getCompletedTasks() -> [Task] {
     return Task.allTasks.filter({ (task) -> Bool in
       task.status == .completed
     })
