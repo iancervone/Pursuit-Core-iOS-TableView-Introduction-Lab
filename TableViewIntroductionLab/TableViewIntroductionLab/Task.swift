@@ -63,5 +63,26 @@ struct Task {
                  dueDate: dateFormatter.date(from: "04-13-2020")!),
         ]
     }
+  
+  func getNotStarted() -> [Task] {
+    return Task.allTasks.filter({ (task) -> Bool in
+      task.status == .notStarted
+    })
+  }
+  
+  
+  func getInProgress() -> [Task] {
+    return Task.allTasks.filter({ (task) -> Bool in
+      task.status == .inProgress
+    })
+  }
+  
+  func getCompletedTasks() -> [Task] {
+    return Task.allTasks.filter({ (task) -> Bool in
+      task.status == .completed
+    })
+  }
 
 }
+
+
